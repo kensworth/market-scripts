@@ -37,7 +37,7 @@ def driver():
     name = 'MarketQuery-s' + sys.argv[1] + 'e' + sys.argv[2] + '.txt'
     f = open(name, 'w')
     for response in responses:
-        f.write(response.text)
+        f.write(response.text + '\n')
 
 if __name__ == "__main__":
     driver()
