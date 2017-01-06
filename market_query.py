@@ -34,8 +34,10 @@ def driver():
         urls.append(constructed_url)
     rs = [grequests.get(url) for url in urls]
     responses = grequests.map(rs)
+    name = 'MarketQuery-s' + sys.argv[1] + 'e' + sys.argv[2] + '.txt'
+    f = open(name, 'w')
     for response in responses:
-        print(response.text)
+        f.write(response.text)
 
 if __name__ == "__main__":
     driver()
