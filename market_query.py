@@ -32,7 +32,7 @@ def driver():
         constructed_url = construct_url(symbol_list)
         urls.append(constructed_url)
     rs = [grequests.get(url) for url in urls]
-    responses = grequests.map(rs, size=5)
+    responses = grequests.map(rs)
     for response in responses:
         print(response.text)
 
