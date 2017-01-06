@@ -1,9 +1,10 @@
 import grequests
+import sys
 
 def construct_url(symbol_list):
     url = 'https://query.yahooapis.com/v1/public/yql';
-    start_date = '2017-01-04'
-    end_date = '2017-01-05'
+    start_date = sys.argv[1]
+    end_date = sys.argv[2]
     data = 'select * from yahoo.finance.historicaldata where symbol in (' + \
         symbol_list + ') and startDate="' + start_date + '" and endDate="' + \
         end_date + '"&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json'

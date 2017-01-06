@@ -1,1 +1,3 @@
-$ python market_query.py // make sure this is python3 and grequests is installed
+Make sure this is python3 and grequests is installed
+Dates take the form YYYY-MM-DD
+$ python market_query.py start_date end_date
