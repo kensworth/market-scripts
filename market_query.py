@@ -34,7 +34,7 @@ def driver():
         urls.append(constructed_url)
     rs = [grequests.get(url) for url in urls]
     responses = grequests.map(rs)
-    name = 'MarketQuery-s' + sys.argv[1] + 'e' + sys.argv[2] + '.txt'
+    name = 'MarketQuery-s' + sys.argv[1] + 'e' + sys.argv[2] + '.json'
     f = open(name, 'w')
     for response in responses:
         f.write(response.text + '\n')
